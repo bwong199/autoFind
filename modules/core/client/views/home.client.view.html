@@ -1,0 +1,72 @@
+<section ng-controller="HomeController" data-ng-init='find()'>
+  <div class="jumbotron text-center">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Find a Car</h3>
+        <a href="/#!/search">Search</a>
+        <form method="get" action="/#!/search">
+          <div class="form-group">
+            <input type="radio" name="type" value="new"> New
+            <input type="radio" name="type" value="used" checked> Used
+          </div>
+          <div class="form-group">
+            <select name="make" class="form-control">
+              <option value="0">Select Make</option>
+              <option value="chevrolet">Chevrolet</option>
+              <option value="dodge">Dodge</option>
+              <option value="toyota">toyota</option>
+              <option value="honda">Honda</option>
+              <option value="lexus">Lexus</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select name="model" class="form-control">
+              <option value="0">Select Model</option>
+              <option value="civic">Civic</option>
+              <option value="camry">Camry</option>
+              <option value="toyota">Toyota</option>
+              <option value="prius">Prius</option>
+              <option value="crv">CRV</option>
+            </select>
+            <br>
+            <div class="form-group">
+              <select name="state" class="form-control">
+                <option value="0">Select State</option>
+                <option value="AB">Alberta</option>
+                <option value="BC">British Columbia</option>
+                <option value="MB">Manitoba</option>
+                <option value="NB">New Brunswick</option>
+                <option value="NL">Newfoundland and Labrador</option>
+                <option value="NS">Nova Scotia</option>
+                <option value="ON">Ontario</option>
+                <option value="PE">Prince Edward Island</option>
+                <option value="QC">Quebec</option>
+                <option value="SK">Saskatchewan</option>
+                <option value="NT">Northwest Territories</option>
+                <option value="NU">Nunavut</option>
+                <option value="YT">Yukon</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="submit" name="submit" class="btn btn-primary" value="Find It">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row home-cars">
+    <h3>Latest Cars</h3>
+    <div class="col-md-3" ng-repeat="car in cars">
+      <h3>{{car.title}}</h3>
+      <img src="img/camry.jpg">
+      <br>
+      <br>
+      <a class="btn-btn-primary" href="/#!/cars/{{car._id}}">View Details</a>
+    </div>
+
+  </div>
+
+
+</section>
